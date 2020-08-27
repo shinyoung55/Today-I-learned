@@ -16,3 +16,26 @@
     lis[i].style.color = 'red'; 
   }
 </script>
+
+만약에 li 가 여러개이고 , 그중 ul 하위에 있는 li만 찾고 싶을때는?
+
+<script>
+ let ul = document.getElementsByTagName('li')[0]; // 먼저 제어대상인 li의 부모 element 인 ul을 찾고, 1번째 요소를 ul에 담아 준다.
+ let lis = ul.getElementsByTagName('li')
+ for(i=0; i<lis.length; i++) {
+  lis[i].style.color ='red';
+ }
+</script>
+
+2. document.getElementsByClassName: class로 제어대상을 찾는다.   
+
+3. document.getElementById: 다른것과 다른점은 단수인데, id값 자체가 유일무이 하기 때문이다. (성능면에서 가장 우수하다)
+4. document.querySelector/ document.querySelectorAll //가장 첫값 vs 모든 값
+
+ let lis = document.querySelectorAll('.class');
+  for (name in lis) {
+    lis[name].style.color ="blue";
+  }
+
+
+
