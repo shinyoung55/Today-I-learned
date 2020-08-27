@@ -1,0 +1,18 @@
+제어대상을 항상 먼저 찾고, 그 제어대상을 변경하는 순서로 생각한다. 
+
+*제어 대상을 찾는법
+
+1. Document.getElementsByTagName : Tag Name으로 찾는다.
+
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<script>
+  let lis = document.getElementsByTagName('li') // 모든 li tag 를 유사 배열안에 넣어 lis에 저장한다.
+  for(i = 0; i < lis.length <i++) {
+    lis[i].style.color = 'red'; 
+  }
+</script>
