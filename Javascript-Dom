@@ -37,5 +37,28 @@
     lis[name].style.color ="blue";
   }
 
+# element를 제어하기 위해서는 먼저 제어를 원하는 element를 조회(Read)해 야되는데, 이 때 조회 하기 위해서 식별자가 필요하다. 
 
+1. 식별자
+  ## element.tagName : 해당 element의 tag이름을 읽는다. 설정하지는 못한다. (읽기 전용)
+  ## element.id :해당 element 의 ID의 값을 읽는다. 설정도 가능하다. 
+  ## element.classList : 해당 요서의 클래스를 유사배열로 return 해준다.
+2. 조회 (조회 대상을 제한하는 법_예를 들어 어떤 element 의 child element 를 조회하고 싶을때
+  #console.group('원하는 범위')
+    let lis = document.getElementsByID('#target')
+    let list = lis.getElementsByClassName('.marked')
+    for(i=0; i < list.length ; i++) { 
+      console.log(list[i].textContent) // 해당 element의 content를 보여준다. 
+  console.groupEnd()
+  # JQuery에서 범위 제한 === 'selector context' 
+   1. $('#active.marked').css('color','red')
+   2. $('#active').find('.marked').css('color','red')
+     *why we use 'find' ? $('#active').css('color','blue').find('.marked').css('background', 'red') //먼저 id에 효과를 주고, 그다음 자식 element에 효과를 줄때.
+3. 속성
+ #element.getAttribute(name)  / $('#target').attr('href')
+ #element.setAttribute(name,value) / $('#target').attr('href','google.com')
+ #element.hasAttribute(name) / 
+ #element.removeAttribute(name) / $('#target').removeAttr('href')
+
+ *JQuery 는 property 는 prop 으로 사용한다. $('#target').prop('class','active')
 
