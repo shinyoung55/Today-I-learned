@@ -95,4 +95,27 @@
    
  });
  
+ 
+ December, 15th 2020
+ 
+ 1. event 추가 
+ 
+ const panels = document.querySelectorAll('.panel') 
+ 
+ panels.forEach((panel)=> {
+    panel.addEventListner('click', () => {
+    removeActiveClasses()
+    panel.classList.add('active')   // 클릭시, active 라는 클래스를 추가함.
+    })
+ })
+ 
+ 2. Adding function
+ 
+ function removeActiveClasses() {
+ panels.forEach((panel) => {
+ panel.classList.remove('active')
+ })
+ }
+ 
+ 
 
